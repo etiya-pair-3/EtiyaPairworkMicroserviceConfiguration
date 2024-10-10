@@ -18,7 +18,7 @@ eureka:
     fetch-registry: true
 
 server:
-  port: 8080
+  port: 8085
 
 management:
   endpoints:
