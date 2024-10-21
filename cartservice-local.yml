@@ -8,7 +8,7 @@ spring:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://eureka:8888/eureka/  # Eureka sunucusuna bağlanma URL'si
+      defaultZone: http://localhost:8888/eureka/  # Eureka sunucusuna bağlanma URL'si
     register-with-eureka: true
     fetch-registry: true
 
