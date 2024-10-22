@@ -1,20 +1,18 @@
 spring:
   application:
     name: orderservice
- data:
+  data:
     mongodb:
-      uri: "mongodb://root:root@localhost:27017/orderdb?authSource=admin"
+      uri: "mongodb://root:root@mongo:27017/orderdb?authSource=admin"
 server:
   port: 8082
 
 eureka:
-  instance:
-    hostname: localhost
   client:
     register-with-eureka: true
     fetch-registry: true
     serviceUrl:
-      defaultZone: http://localhost:8888/eureka/
+      defaultZone: http://eureka:8888/eureka/
 
 management:
   endpoints:
