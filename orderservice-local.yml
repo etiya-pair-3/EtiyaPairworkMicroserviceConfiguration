@@ -3,7 +3,8 @@ spring:
     name: orderservice
   data:
     mongodb:
-      uri: "mongodb://root:root@localhost:27017/orderdb?authSource=admin"
+      database: orderdb
+      uri: mongodb://localhost:27017
 server:
   port: 8082
 
