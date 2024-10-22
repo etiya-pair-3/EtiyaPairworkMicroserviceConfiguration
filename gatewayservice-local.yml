@@ -43,6 +43,7 @@ server:
   port: 8090
 
 eureka:
+  url: http://localhost:8888
   instance:
     hostname: localhost
   client:
