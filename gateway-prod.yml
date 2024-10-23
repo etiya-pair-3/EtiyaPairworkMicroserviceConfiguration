@@ -45,7 +45,7 @@ server:
 eureka:
   url: http://localhost:8888
   instance:
-    hostname: gateway
+    hostname: localhost
   client:
     register-with-eureka: true
     fetch-registry: true
