@@ -43,7 +43,7 @@ server:
   port: 8090
 
 eureka:
-  url: http://eureka:8888
+  url: http://localhost:8888
   client:
     register-with-eureka: true
     fetch-registry: true
