@@ -1,6 +1,6 @@
 spring:
   redis:
-    host: redis  # Redis servisine bağlanacak host (Docker-compose'da servis adıyla bağlanır)
+    host: localhost  # Redis servisine bağlanacak host (Docker-compose'da servis adıyla bağlanır)
     port: 6379   # Redis portu
     password: test  # Redis şifresi
     timeout: 60000  # İsteğe bağlı: Redis'e timeout süresi (milisaniye cinsinden)
