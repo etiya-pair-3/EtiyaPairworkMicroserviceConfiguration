@@ -2,7 +2,7 @@ spring:
   redis:
     host: localhost  # Redis servisine bağlanacak host (Docker-compose'da servis adıyla bağlanır)
     port: 6379   # Redis portu
-    timeout: 60000  # İsteğe bağlı: Redis'e timeout süresi (milisaniye cinsinden)
+    timeout: 600000  # İsteğe bağlı: Redis'e timeout süresi (milisaniye cinsinden)
 
 eureka:
   client:
