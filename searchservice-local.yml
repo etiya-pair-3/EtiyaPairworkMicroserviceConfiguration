@@ -9,7 +9,7 @@ spring:
     template:
       default-topic: orderTopic
     producer:
-      keySerializer: org.apache.kafka.common.serialization.StringSerializer
+      keySerializer: org.apache.kafka.common.serialization.JsonSerializer
       valueSerializer: org.springframework.kafka.support.serializer.JsonSerializer
 server:
   port: 8085
