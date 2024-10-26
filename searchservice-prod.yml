@@ -3,14 +3,18 @@ spring:
     name: searchservice
   data:
     mongodb:
-      uri: "mongodb://root:root@mongo:27017/orderdb?authSource=admin"
+      uri: "mongodb://root:root@mongo:27017/searchdb?authSource=admin"
   kafka:
-    bootstrapServer: "localhost:9092"
-    template:
-      default-topic: orderTopic
-    producer:
-      keySerializer: org.apache.kafka.common.serialization.StringSerializer
-      valueSerializer: org.springframework.kafka.support.serializer.JsonSerializer
+    consumer:
+      auto-offset-reset: earliest
+      bootstrap-servers: localhost:9092
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      properties:
+        spring:
+          json:
+            trusted:
+              packages: '*'
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
 server:
   port: 8085
 
