@@ -5,11 +5,15 @@ spring:
     mongodb:
       uri: "mongodb://root:root@localhost:27017/searchdb?authSource=admin"
   kafka:
-    bootstrapServer: "localhost:9092"
-    template:
-      default-topic: orderTopic
     consumer:
+      auto-offset-reset: earliest
+      bootstrap-servers: localhost:9092
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      properties:
+        spring:
+          json:
+            trusted:
+              packages: '*'
       value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
 server:
   port: 8085
