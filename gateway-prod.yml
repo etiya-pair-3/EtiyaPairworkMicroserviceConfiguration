@@ -18,6 +18,10 @@ spring:
             uri: lb://orderservice # load-balancing
             predicates:
               - Path=/api/orders/**
+          - id: search-service.routing
+            uri: lb://searchservice # load-balancing
+            predicates:
+              - Path=/api/search/**
 
           - id: identity-service.routing
             uri: lb://identityservice
