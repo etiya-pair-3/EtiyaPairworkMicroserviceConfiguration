@@ -3,7 +3,7 @@ spring:
     name: searchservice
   data:
     mongodb:
-      uri: "mongodb://root:root@localhost:27017/orderdb?authSource=admin"
+      uri: "mongodb://root:root@localhost:27017/searchdb?authSource=admin"
   kafka:
     bootstrapServer: "localhost:9092"
     template:
