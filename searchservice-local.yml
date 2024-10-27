@@ -10,6 +10,7 @@ spring:
       auto-offset-reset: earliest
       bootstrap-servers: localhost:9092
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
       properties:
         spring:
           deserializer:
@@ -19,8 +20,7 @@ spring:
           json:
             trusted:
               packages: '*'
-      value-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
-      specific-value-type: org.example.searchservice.kafka.events.customer.CustomerCreatedEvent  # Deserialization sınıfını açıkça belirtin
+      
 server:
   port: 8085
 
