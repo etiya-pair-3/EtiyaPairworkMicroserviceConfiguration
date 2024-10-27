@@ -6,6 +6,7 @@ spring:
       uri: "mongodb://root:root@localhost:27017/searchdb?authSource=admin"
   kafka:
     consumer:
+      group-id: group-id
       auto-offset-reset: earliest
       bootstrap-servers: localhost:9092
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
