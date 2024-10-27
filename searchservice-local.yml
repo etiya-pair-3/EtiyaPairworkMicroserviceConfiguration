@@ -14,7 +14,7 @@ spring:
         spring:
           json:
             trusted:
-              packages: 'com.etiya.customerservice.kafka.events.customer'  # Sadece ilgili paketi güvenli olarak tanımlayın
+              packages: '*'
       value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
       specific-value-type: com.etiya.customerservice.kafka.events.customer.CustomerCreatedEvent  # Deserialization sınıfını açıkça belirtin
 server:
