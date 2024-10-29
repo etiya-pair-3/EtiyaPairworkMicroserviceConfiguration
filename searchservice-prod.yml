@@ -8,7 +8,7 @@ spring:
     consumer:
       group-id: group-id
       auto-offset-reset: earliest
-      bootstrap-servers: kafka:9092
+      bootstrap-servers: eureka:9092
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
       properties:
