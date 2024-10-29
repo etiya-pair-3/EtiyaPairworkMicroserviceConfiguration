@@ -4,7 +4,7 @@ spring:
   data:
     mongodb:
       uri: "mongodb://root:root@mongo:27017/searchdb?authSource=admin"
-   kafka:
+  kafka:
     consumer:
       group-id: group-id
       auto-offset-reset: earliest
