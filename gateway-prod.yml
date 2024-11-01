@@ -3,6 +3,19 @@ spring:
     name: gateway
   cloud:
     gateway:
+    #cors hatası deneme başlangıç
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "http://localhost:4200"
+            allowedMethods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+            allowedHeaders: "*"
+            allowCredentials: true
+      #cors hatası deneme biitş
       mvc:
         routes:
           - id: customer-service.routing
