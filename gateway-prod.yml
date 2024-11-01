@@ -3,17 +3,6 @@ spring:
     name: gateway
   cloud:
     gateway:
-      globalcors:
-        corsConfigurations:
-          '[/**]':
-            allowedOrigins: "http://localhost:4200"
-            allowedMethods:
-              - GET
-              - POST
-              - PUT
-              - DELETE
-            allowedHeaders: "*"
-            allowCredentials: true
       mvc:
         routes:
           - id: customer-service.routing
