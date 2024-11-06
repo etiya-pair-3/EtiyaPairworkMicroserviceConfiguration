@@ -5,73 +5,25 @@ spring:
       function:
         bindings:
           processCustomerCreatedEvent-in-0: create-topic
-          processCustomerUpdatedEvent-in-0: update-topic
-          processCustomerDeletedEvent-in-0: delete-topic
-          processBilAccntCreatedEvent-in-0: create-topic
-          processCncInfoUpdatedEvent-in-0: update-topic
       bindings:
         processCustomerCreatedEvent-in-0:
           destination: create-topic
-          content-type: application/json
-        processCustomerUpdatedEvent-in-0:
-          destination: update-topic
-          content-type: application/json
-        processCustomerDeletedEvent-in-0:
-          destination: delete-topic
-          content-type: application/json
-        processBilAccntCreatedEvent-in-0:
-          destination: create-topic
-          content-type: application/json
-        processCncInfoUpdatedEvent-in-0:
-          destination: update-topic
           content-type: application/json
       kafka:
         binder:
           brokers: kafka:9092
           consumerProperties:
-            group.id: group-id
+            group.id: search-service-group
       rabbit:
         binder:
           addresses: rabbit:5672
           username: guest
           password: guest
-  kafka:
-    consumer:
-      group-id: group-id
-      auto-offset-reset: earliest
-      bootstrap-servers: kafka:9092
-      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      value-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
-      properties:
-        spring:
-          deserializer:
-            value:
-              delegate:
-                class: org.springframework.kafka.support.serializer.JsonDeserializer
-          json:
-            trusted:
-              packages: '*'
-  application:
-    name: searchservice
-  kafka:
-    consumer:
-      group-id: group-id
-      auto-offset-reset: earliest
-      bootstrap-servers: kafka:9092
-      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      value-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
-      properties:
-        spring:
-          deserializer:
-            value:
-              delegate:
-                class: org.springframework.kafka.support.serializer.JsonDeserializer
-          json:
-            trusted:
-              packages: '*'
   data:
     mongodb:
       uri: "mongodb://root:root@mongo:27017/searchdb?authSource=admin"
+  application:
+    name: searchservice
 server:
   port: 8085
 
