@@ -4,13 +4,13 @@ spring:
       defaultBinder: kafka
       function:
         bindings:
-          processCustomerCreateEvent-in-0: create-topic
+          processCustomerCreatedEvent-in-0: create-topic
           processCustomerUpdatedEvent-in-0: update-topic
           processCustomerDeletedEvent-in-0: delete-topic
           processBilAccntCreatedEvent-in-0: create-topic
           processCncInfoUpdatedEvent-in-0: update-topic
       bindings:
-        processCustomerCreateEvent-in-0:
+        processCustomerCreatedEvent-in-0:
           destination: create-topic
           content-type: application/json
         processCustomerUpdatedEvent-in-0:
