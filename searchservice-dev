@@ -1,0 +1,58 @@
+spring:
+  application:
+    name: searchservice
+  data:
+    mongodb:
+      uri: "mongodb://root:root@mongo:27017/searchdb?authSource=admin"
+  cloud:
+    stream:
+      defaultBinder: kafka
+      function:
+        bindings:
+          processOrderEvent-in-0: create-topic
+      bindings:
+        processOrderEvent-in-0:
+          destination: create-topic
+          content-type: application/json
+
+      kafka:
+        binder:
+          brokers: kafka:9092
+          consumerProperties:
+            group.id: customer-service-group
+      rabbit:
+        binder:
+          addresses: kafka:5672
+          username: guest
+          password: guest
+  kafka:
+    consumer:
+      group-id: group-id
+      auto-offset-reset: earliest
+      bootstrap-servers: kafka:9092
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
+      properties:
+        spring:
+          deserializer:
+            value:
+              delegate:
+                class: org.springframework.kafka.support.serializer.JsonDeserializer
+          json:
+            trusted:
+              packages: '*'
+server:
+  port: 8085
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    serviceUrl:
+      defaultZone: http://eureka:8888/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
