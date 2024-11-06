@@ -16,7 +16,7 @@ spring:
       defaultBinder: kafka
       function:
         bindings:
-          processCustomerCreatedEvent-out-0: create-topic
+          customerCreatedEvent-out-0: create-topic
           customerUpdatedEvent-out-0: update-topic
           customerDeletedEvent-out-0: delete-topic
           bilAccntCreatedEvent-out-0: create-topic
