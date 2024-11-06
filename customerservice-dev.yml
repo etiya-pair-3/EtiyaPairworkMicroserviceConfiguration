@@ -16,13 +16,13 @@ spring:
       defaultBinder: kafka
       function:
         bindings:
-          customerCreatedEvent-out-0: create-topic
+          processCustomerCreatedEvent-out-0: create-topic
           customerUpdatedEvent-out-0: update-topic
           customerDeletedEvent-out-0: delete-topic
           bilAccntCreatedEvent-out-0: create-topic
           cncInfoUpdatedEvent-out-0: update-topic
       bindings:
-        customerCreatedEvent-out-0:
+        processCustomerCreatedEvent-out-0:
           destination: create-topic
           content-type: application/json
         customerUpdatedEvent-out-0:
