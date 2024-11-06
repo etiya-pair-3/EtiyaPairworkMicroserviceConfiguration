@@ -19,7 +19,7 @@ spring:
         binder:
           brokers: kafka:9092
           consumerProperties:
-            group.id: customer-service-group
+            group.id: group-id
       rabbit:
         binder:
           addresses: kafka:5672
