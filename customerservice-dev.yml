@@ -13,7 +13,7 @@ spring:
       ddl-auto: update
   cloud:
     stream:
-      defaultBinder: kafka
+      defaultBinder: rabbit
       function:
         bindings:
           customerCreatedEvent-out-0: create-topic
