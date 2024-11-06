@@ -16,11 +16,27 @@ spring:
       defaultBinder: kafka
       function:
         bindings:
-          orderCreatedEvent-out-0: create-topic
+          customerCreatedEvent-out-0: create-topic
+          customerUpdatedEvent-out-0: update-topic
+          customerDeletedEvent-out-0: delete-topic
+          bilAccntCreatedEvent-out-0: create-topic
+          cncInfoUpdatedEvent-out-0: update-topic
       bindings:
-        orderCreatedEvent-out-0:
+        customerCreatedEvent-out-0:
           destination: create-topic
           content-type: application/json
+        customerUpdatedEvent-out-0:
+          destination: update-topic
+          content-type: application/json
+        customerDeletedEvent-out-0:
+          destination: delete-topic
+          content-type: application/json
+        bilAccntCreatedEvent-out-0:
+          destination: create-topic
+          content-type: application/json
+        cncInfoUpdatedEvent-out-0:
+          destination: update-topic
+          content-type: application/json  
       kafka:
         binder:
           brokers: kafka:9092
