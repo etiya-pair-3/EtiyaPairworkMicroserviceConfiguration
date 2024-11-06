@@ -37,7 +37,7 @@ spring:
             group.id: group-id
       rabbit:
         binder:
-          addresses: rabbit:5672
+          addresses: rabbitmq:5672
           username: guest
           password: guest
 server:
