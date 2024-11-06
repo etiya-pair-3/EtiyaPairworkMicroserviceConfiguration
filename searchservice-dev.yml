@@ -32,7 +32,7 @@ spring:
             group.id: group-id
       rabbit:
         binder:
-          addresses: rabbitmq:5672
+          addresses: rabbit:5672
           username: guest
           password: guest
   application:
