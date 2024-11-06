@@ -1,7 +1,7 @@
 spring:
   cloud:
     stream:
-      defaultBinder: rabbit
+      defaultBinder: kafka
       function:
         bindings:
           processCustomerCreatedEvent-in-0: create-topic
