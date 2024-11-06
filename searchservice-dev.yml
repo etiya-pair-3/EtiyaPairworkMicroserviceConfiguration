@@ -37,6 +37,22 @@ spring:
           password: guest
   application:
     name: searchservice
+  kafka:
+    consumer:
+      group-id: group-id
+      auto-offset-reset: earliest
+      bootstrap-servers: kafka:9092
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
+      properties:
+        spring:
+          deserializer:
+            value:
+              delegate:
+                class: org.springframework.kafka.support.serializer.JsonDeserializer
+          json:
+            trusted:
+              packages: '*'
   data:
     mongodb:
       uri: "mongodb://root:root@mongo:27017/searchdb?authSource=admin"
