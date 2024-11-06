@@ -1,7 +1,7 @@
 spring:
   cloud:
     stream:
-      defaultBinder: rabbitmq3
+      defaultBinder: rabbit
       function:
         bindings:
           processCustomerCreatedEvent-in-0: create-topic
@@ -30,9 +30,9 @@ spring:
           brokers: kafka:9092
           consumerProperties:
             group.id: group-id
-      rabbitmq3:
+      rabbit:
         binder:
-          addresses: rabbitmq3:5672
+          addresses: rabbit:5672
           username: guest
           password: guest
   application:
